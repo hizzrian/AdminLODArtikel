@@ -15,6 +15,7 @@ const totalPage = ref(1)
 const totalItems = ref(0)
 const slugs = ref()
 const kategoris = ref()
+
 const options = ref({
   page: 1,
   itemsPerPage: 10,
@@ -81,16 +82,17 @@ const deleteArtikel = () => {
 
 const getSlugs = () => {
   axios.get('slug').then(res => {
-    // convert object to json
-    
     slugs.value = res.data.slug.map(item => item.slug)
+  }).catch(err => {
+    console.log(err)
   })
 }
 
 const getKategoris = () => {
   axios.get('kategori').then(res => {
-    // convert object to json
     kategoris.value = res.data.kategori.map(item => item.kategori)
+  }).catch(err => {
+    console.log(err)
   })
 }
 
@@ -113,6 +115,8 @@ const getArticles = () => {
       item.konten = item.konten.substring(0, 100) + '...'
     })
     totalItems.value = res.data.data.length
+  }).catch(err => {
+    console.log(err)
   })
 }
 

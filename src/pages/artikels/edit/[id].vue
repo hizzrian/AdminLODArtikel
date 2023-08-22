@@ -31,9 +31,9 @@
           <!-- group this VBtn  -->
           <VCard>
             <VBtn
-            class="group"
-            color="primary"
-            @click="bold"
+              class="group"
+              color="primary"
+              @click="bold"
             >
               Bold
             </VBtn>

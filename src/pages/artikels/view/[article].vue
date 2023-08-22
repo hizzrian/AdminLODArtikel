@@ -103,6 +103,10 @@
             <h6 class="text-h6 mb-1">
               {{ artikel.judul }}
             </h6>
+            <!-- author -->
+            <p class="mb-1">
+              {{ artikel.author }}
+            </p>
             <p class="mb-1">
               {{ artikel.views }} Views
             </p>
